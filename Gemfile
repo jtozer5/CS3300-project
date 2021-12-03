@@ -73,5 +73,6 @@ gem 'mini_racer'
 group :development, :test do
   gem 'rspec-rails', '~> 3.7'
 end
- gem 'bootstrap'
+ gem 'bootstrap', '~> 4.0.0'
  gem 'devise'
+ gem 'jquery-rails'

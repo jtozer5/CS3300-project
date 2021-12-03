@@ -1,30 +1,61 @@
 <p id="notice"><%= notice %></p>
+<div class='container'>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">CS 3300 Portfolio Project</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-<h1>Projects</h1>
-<p>These are some projects.</p>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#index">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Sign In / Sign Up</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Sign In / Sign Up</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @projects.each do |project| %>
+  <div class="jumbotron">
+      <h1>Projects</h1>
+      <br><br>
+  </div>
+    <div class="panel text-center">
+      <p> Portfolio description </p>
+      <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla porttitor malesuada mauris, sit amet ultrices sapien ornare nec. Pellentesque venenatis sem lectus, quis fringilla nisi varius in. Nam eros libero, molestie at velit a, consectetur consequat quam. Aliquam tincidunt diam non quam hendrerit, vitae porttitor nisi fermentum. Maecenas aliquet nisl quis aliquet maximus. Maecenas efficitur nisi non odio tincidunt vestibulum. Fusce libero lectus, cursus sed gravida at, condimentum et dui. Aenean semper ante sed malesuada euismod. Aliquam sit amet elit sed urna placerat feugiat. Donec lobortis sapien dolor, et commodo risus scelerisque sit amet. Nullam mauris eros, pharetra eget diam sit amet, gravida tristique sem. Integer iaculis blandit mauris eget suscipit. Praesent consectetur magna id ultricies convallis.</p>
+
+      <p>Duis accumsan faucibus ligula, vel dignissim nisi pulvinar non. Vivamus dignissim nisl sit amet turpis imperdiet, sit amet rhoncus enim vulputate. Quisque scelerisque, erat ac dapibus pellentesque, neque purus gravida purus, ut consectetur felis odio placerat diam. Maecenas dictum tincidunt quam. In viverra diam justo, sagittis commodo mi maximus sit amet. Integer imperdiet orci non iaculis iaculis. Nam dui metus, suscipit ut enim eget, maximus rutrum arcu. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque id lacus ut purus semper luctus at id ex. Curabitur nec eros rhoncus, sagittis ante ut, placerat nulla. Nunc pulvinar ut lacus vel dignissim. Integer rhoncus fringilla sapien, nec eleifend augue consectetur et. Quisque vel felis vulputate, tristique ligula id, porttitor est.</p>
+    
+      <p>Ut a felis pellentesque, dictum orci in, blandit neque. Aliquam luctus, justo et imperdiet finibus, est metus semper ante, id mattis risus odio a nunc. Nulla ac augue lobortis, tristique mauris vitae, hendrerit mi. Sed blandit, orci ultrices vestibulum euismod, dui elit rutrum erat, non viverra arcu eros sit amet lorem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris non elementum dolor. Nullam sem neque, cursus quis arcu ac, rhoncus blandit lacus. Suspendisse mattis orci vel tortor tincidunt egestas. Aenean id tellus arcu. Suspendisse malesuada tempus neque vel mattis. Sed volutpat erat ultricies, dapibus dolor a, facilisis nisl. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc mollis tempus egestas. Vivamus velit nibh, pharetra ut ante sed, placerat viverra orci. Pellentesque convallis elit sed risus faucibus fermentum.</p>
+    </div>
+  <table class="table table-striped">
+    <thead>
       <tr>
-        <td><%= project.title %></td>
-        <td><%= project.description %></td>
-        <td><%= link_to 'Show', project %></td>
-        <td><%= link_to 'Edit', edit_project_path(project) %></td>
-        <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Title</th>
+        <th>Description</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @projects.each do |project| %>
+        <tr>
+          <td><%= project.title %></td>
+          <td><%= project.description %></td>
+          <td><%= link_to 'Show', project, class: "btn btn-primary text-center" %></td>
+          <td><%= link_to 'Edit', edit_project_path(project), class: "btn btn-secondary text-center" %></td>
+          <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to 'New Project', new_project_path %>
+  <%= link_to 'New Project', new_project_path, class: 'btn btn-success text-center' %>
+  <br><br>
+</div>
